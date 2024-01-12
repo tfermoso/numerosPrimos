@@ -1,20 +1,23 @@
 import java.util.Random;
 
 public class NumerosPrimos {
-    public static int[] generarNumeros(){
-        int[] numeros;
+    public int[] numeros;
+    public int[] numerosPrimos;
 
+    public NumerosPrimos() {
         numeros=new int[20];
         Random aleatorios=new Random();
         for (int i = 0; i < numeros.length; i++) {
             numeros[i]= aleatorios.nextInt(0,100);
         }
-        return numeros;
+        devolerNumerosPrimos();
     }
 
-    public static int[] devolerNumerosPrimos(int[] numeros) {
+
+
+    private   void devolerNumerosPrimos() {
         int contador=0;
-        int[] numerosPrimos;
+
         for (int i = 0; i < numeros.length; i++) {
             if(esPrimo(numeros[i])){
                 contador++;
@@ -28,7 +31,7 @@ public class NumerosPrimos {
                 j++;
             }
         }
-        return numerosPrimos;
+
     }
 
     private static boolean esPrimo(int numero) {
